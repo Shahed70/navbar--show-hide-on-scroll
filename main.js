@@ -1,18 +1,22 @@
-let hamburger = document.querySelector(".hamburger");
 
-hamburger.addEventListener("click", () => {
-  console.log("got it");
-  let navBar = document.querySelector(".nav-bar");
-  navBar.classList.toggle("active");
-});
+let lastScrollTop; // This Varibale will store the top position
 
-let headerFixed = document.querySelector(".myheader");
-window.addEventListener("scroll", function myFunc() {
-  if (window.scrollY > 200) {
-    headerFixed.classList.remove("header-remove");
-    headerFixed.classList.add("header-fixed");
-  } else {
-    headerFixed.classList.remove("header-fixed");
-    headerFixed.classList.add("header-remove");
+const navbar = document.querySelector('.navbar'); // Get The NavBar
+
+window.addEventListener('scroll',function(){
+ //on every scroll this funtion will be called
+  
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //This line will get the location on scroll
+  
+  if(scrollTop > lastScrollTop){ //if it will be greater than the previous
+    navbar.style.top='-80px';
+    //set the value to the negetive of height of navbar 
   }
+  
+  else{
+    navbar.style.top='0';
+  }
+  
+  lastScrollTop = scrollTop; //New Position Stored
 });

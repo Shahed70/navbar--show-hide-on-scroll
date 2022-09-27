@@ -1,4 +1,5 @@
 *{
+   --nav-height: 70px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,7 +9,7 @@
 
 
 /* css for navbar style one of index.html file*/
-.navbar{
+.nav{
     position:fixed;
     background: #030324;
     display: flex;
@@ -21,10 +22,17 @@
     color:white;
     text-align:center;
     /*Define a height for NavBar*/
-    height:80px;
+    height:var(--nav-height);
     transition: 0.5s;
     /*and a transition time for a smooth appearence*/
     
+  }
+
+
+
+  .nav--hidden {
+    transform: translateY(calc(-1 * var(--nav-height)));
+    box-shadow: none;
   }
 
 .logo{
