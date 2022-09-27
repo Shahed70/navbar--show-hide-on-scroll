@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+header{
+    height: 80px;
+    width: 100%;
+    background: #030324;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+ 
+.header-fixed{
+    position: fixed;
+    top:0;
+    width: 100%;
+    transform: translate(0px);
+    transition: .5s;
+}
+
+
+.header-remove{
+    position: fixed;
+    top:0;
+    width: 100%;
+    transform: translateY(-80px);
+    transition: .5s;
+}
+
+.logo{
+    font-size: 28px;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.hamburger{
+    display: none;
+}
+
+.nav-bar ul{
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar ul li a{
+    display: block;
+    color: aliceblue;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-radius: 50px;
+    margin: 0 7px;
+}
+
+.nav-bar ul li a:hover{
+    color: #030324;
+    background: aliceblue;
+
+}
+
+
+.main {
+    padding: 150px;
+    background:#ddd;
+}
+
+@media only screen and (max-width:900px){
+        .hamburger{
+            display: block;
+            cursor: pointer;
+        }
+
+        .hamburger .line{
+            width: 30px;
+            height: 3px;
+            margin: 5px 0;
+            background: aliceblue;
+        }
+
+        .nav-bar{
+            height: 0;
+            position: absolute;
+            top:80px;
+            background: #030324;
+            width: 100vw;
+            left:0;
+            right: 0;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .nav-bar ul{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            width: fit-content;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .nav-bar.active ul{
+            opacity: 1;
+        }
+
+        .nav-bar.active{
+            height: 450px;
+        }
+
+        .nav-bar ul li a{
+            margin: 6px;
+        }
+}
+
